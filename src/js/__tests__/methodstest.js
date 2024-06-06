@@ -21,13 +21,12 @@ describe('Character class tests', () => {
   });
 
   test('Character takes damage with positive health', () => {
-    character.defence = 10; // Для упрощения расчетов
-    character.damage(50);
+    character.defence = 10;
     expect(character.health).toBeCloseTo(100 - 50 * (1 - 10 / 100));
   });
 
   test('Character takes damage resulting in negative health', () => {
-    character.defence = 10; // Для упрощения расчетов
+    character.defence = 10;
     character.damage(200);
     expect(character.health).toBe(0);
   });
