@@ -22,7 +22,9 @@ describe('Character class tests', () => {
 
   test('Character takes damage with positive health', () => {
     character.defence = 10;
-    expect(character.health).toBeCloseTo(100 - 50 * (1 - 10 / 100));
+    character.damage(50);
+    const expectedHealth = 100 - 50 * (1 - 10 / 100);
+    expect(character.health).toBeCloseTo(expectedHealth);
   });
 
   test('Character takes damage resulting in negative health', () => {
